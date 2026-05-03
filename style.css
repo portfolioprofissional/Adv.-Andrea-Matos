@@ -1,0 +1,248 @@
+/* Importação das fontes do Google */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;700&display=swap');
+
+/* Variáveis de Identidade Visual (Cores baseadas no cartão) */
+:root {
+    --verde-escuro: #2D4039;
+    --dourado: #E1C48C;
+    --preto-menu: #1F2D28;
+    --branco-suave: #F5F5F5;
+    --cor-whatsapp: #25D366;
+    --cor-instagram: #E1306C;
+    --cor-email: #0078D4;
+}
+
+/* Efeito de deslize suave para links internos */
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--branco-suave);
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* --- CLASSE PARA SEÇÕES EM TELA CHEIA --- */
+.full-page {
+    min-height: 100vh; /* Adapta-se a 100% da altura de qualquer tela */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    scroll-margin-top: 60px; /* Folga para o menu fixo não cobrir o título */
+}
+
+/* Header */
+header {
+    background-color: var(--verde-escuro);
+    color: var(--dourado);
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 2px solid var(--dourado);
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 10vw, 4rem);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.oab {
+    display: block;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+/* Menu de Navegação */
+.menu {
+    background-color: var(--preto-menu);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo-adv {
+    color: var(--dourado);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+}
+
+.menu a {
+    color: var(--dourado);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.menu a:hover { color: white; }
+
+/* Seção Hero (Foto de Fundo Adaptável) */
+.hero {
+    background: linear-gradient(rgba(45, 64, 57, 0.75), rgba(45, 64, 57, 0.75)), 
+                url('fotos/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+    color: var(--dourado);
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 5vw;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-image {
+    flex: 0 0 45%;
+    max-width: 500px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border: 4px solid var(--dourado);
+    border-radius: 20px;
+    box-shadow: 
+        0 15px 40px rgba(225, 196, 140, 0.4),
+        inset 0 2px 10px rgba(225, 196, 140, 0.2);
+    object-fit: cover;
+}
+
+.hero-text {
+    flex: 1;
+    text-align: center;
+}
+
+.hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 6vw, 3.8rem);
+    margin-bottom: 25px;
+}
+
+.btn-whatsapp-hero {
+    display: inline-block;
+    padding: 18px 40px;
+    background-color: var(--dourado);
+    color: var(--verde-escuro);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .hero-image {
+        flex: none;
+        max-width: 300px;
+    }
+}
+
+/* Seção Sobre */
+.sobre-mim {
+    background-color: var(--verde-escuro);
+    color: var(--dourado);
+}
+
+.sobre-mim .container { max-width: 850px; text-align: center; }
+.sobre-mim h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 40px; }
+.texto-profissional p { font-size: 1.15rem; line-height: 1.8; margin-bottom: 20px; text-align: justify; }
+
+/* Seção Depoimentos */
+.google-reviews { background-color: white; }
+.reviews-container { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 50px; }
+.review-card {
+    background: var(--branco-suave);
+    padding: 35px;
+    border-radius: 12px;
+    width: 320px;
+    border-top: 5px solid var(--dourado);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+.stars { color: #f1c40f; font-size: 1.3rem; margin-bottom: 15px; }
+
+/* Seção de Contatos */
+.contatos-section { background-color: #f9f9f9; }
+.contatos-container { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-top: 50px; }
+
+.card-contato {
+    background: white;
+    width: 280px;
+    padding: 45px 25px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: var(--verde-escuro);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.card-contato i { font-size: 3rem; margin-bottom: 20px; }
+.card-contato span { font-weight: 700; font-size: 1.1rem; text-transform: uppercase; }
+
+/* Hovers Coloridos das Redes */
+.whatsapp:hover { background-color: var(--cor-whatsapp); color: white; transform: translateY(-12px); }
+.email:hover { background-color: var(--cor-email); color: white; transform: translateY(-12px); }
+.instagram:hover { background-color: var(--cor-instagram); color: white; transform: translateY(-12px); }
+
+/* --- RESPONSIVIDADE PARA CELULARES --- */
+@media (max-width: 768px) {
+    .nav-container { flex-direction: column; gap: 15px; }
+    .menu ul { gap: 10px; }
+    .menu a { margin: 0; font-size: 0.75rem; }
+    .full-page { padding: 60px 15px; }
+    header { padding: 40px 15px; }
+    .sobre-mim h2 { font-size: 2rem; }
+}
+
+footer {
+    background-color: var(--verde-escuro);
+    color: var(--dourado);
+    text-align: center;
+    padding: 30px;
+    font-size: 0.85rem;
+}
